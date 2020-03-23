@@ -16,7 +16,7 @@ spec:
       containers:
         - name: kubeturbo-operator
           # Replace this with the built image name
-          image: turbonomic/kubeturbo-operator:7.21
+          image: registry.access.redhat.com/turbonomic/kubeturbo-operator:7.21-offline
           imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE
@@ -27,3 +27,5 @@ spec:
                   fieldPath: metadata.name
             - name: OPERATOR_NAME
               value: "kubeturbo-operator"
+            - name: RELATED_IMAGE_KUBETURBO
+              value: "registry.access.redhat.com/turbonomic/kubeturbo"
